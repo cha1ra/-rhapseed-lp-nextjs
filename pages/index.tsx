@@ -2,25 +2,21 @@ import type { NextPage } from 'next'
 import {
   Box,
   Container,
-  Center,
-  Image,
+  Stack,
   Text
 } from "@chakra-ui/react";
+import HeaderDiv from "../components/HeaderDiv";
+import NewsDiv from "../components/NewsDiv";
+import BusinessDev from "../components/BusinessDev";
 
 const Home: NextPage = () => {
   return (
-    <Container  py={6}>
-      <Box bg={'red'} >
-        <Center>
-          <Text>
-            {'発想を紡げば、新発見の"種"になる。'}
-          </Text>
-        </Center>
-        <Center>
-          <Image src='/logo.svg' alt='rhapseed' />
-        </Center>
-      </Box>
-
+    <Container maxW='container.lg' py={6}>
+      <Stack spacing={12}>
+        <HeaderDiv />
+        <NewsDiv />
+        <BusinessDev />
+      </Stack>
     </Container>
   )
 }
