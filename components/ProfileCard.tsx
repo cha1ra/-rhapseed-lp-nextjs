@@ -1,14 +1,12 @@
 import {
   Box,
   Badge,
-  Center,
   Flex,
   Heading,
   Image,
   Stack,
   Text,
   SimpleGrid,
-  useColorModeValue,
 } from '@chakra-ui/react';
 
 export default function socialProfileWithImageHorizontal() {
@@ -47,7 +45,7 @@ export default function socialProfileWithImageHorizontal() {
         borderWidth="1px"
         borderRadius="lg"
         direction={{ base: 'column', md: 'row' }}
-        bg={useColorModeValue('white', 'gray.900')}
+        bg='white'
         boxShadow={'2xl'}
         padding={4}>
         <Flex
@@ -59,6 +57,7 @@ export default function socialProfileWithImageHorizontal() {
             objectFit="cover"
             boxSize="150px"
             src={'./member-aira.png'}
+            alt="坂尻 愛明"
           />
         </Flex>
         <Stack
@@ -88,7 +87,7 @@ export default function socialProfileWithImageHorizontal() {
             <Text fontSize={'xs'} fontWeight={600}>略歴</Text>
             <Text
               fontSize={'sm'}
-              color={useColorModeValue('gray.700', 'gray.400')}
+              color={'gray.700'}
             >
               {profile.description}
             </Text>
@@ -100,9 +99,11 @@ export default function socialProfileWithImageHorizontal() {
               mt={2}
             >
               {profile.awards.map((award, index) => (
-                <Stack direction={'row'}>
+                <Stack
+                  direction={'row'}
+                  key={index}
+                >
                   <Text
-                    key={index}
                     variant="solid"
                     fontSize={'xs'}
                     fontWeight={300}
@@ -140,7 +141,7 @@ export default function socialProfileWithImageHorizontal() {
                     py={1}
                     mb={1}
                     mr={2}
-                    bg={useColorModeValue('gray.50', 'gray.800')}
+                    bg={'gray.50'}
                     fontWeight={'400'}
                   >
                     #{tag}
