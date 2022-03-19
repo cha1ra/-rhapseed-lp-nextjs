@@ -11,14 +11,21 @@ import {
 // cf.) https://kray.jp/blog/dont-have-to-use-react-fc-and-react-vfc/
 const HeaderDiv = () => {
   return (
-    <Box bg={'red'} >
-      <Center>
+    <Box py={12}>
+      <Center mb={-5}>
         <Text>
-          {'発想を紡げば、新発見の"種"になる'}
+          発想を紡げば 新発見の
         </Text>
+        <Text color={'primary'} >種</Text>
+        <Text>がある</Text>
       </Center>
       <Center>
-        <Image src='/logo.svg' alt='rhapseed' />
+        <Image
+          src='/logo.svg'
+          alt='rhapseed'
+          width={'80%'}
+          maxW={'500px'}
+        />
       </Center>
     </Box>
   )

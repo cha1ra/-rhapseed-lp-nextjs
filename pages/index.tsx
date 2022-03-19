@@ -7,17 +7,47 @@ import {
 } from "@chakra-ui/react";
 import HeaderDiv from "../components/HeaderDiv";
 import NewsDiv from "../components/NewsDiv";
-import BusinessDev from "../components/BusinessDev";
+import ExplanationDiv from "../components/ExplanationDiv";
+import BusinessDiv from "../components/BusinessDiv";
+import ProfileDiv from "../components/ProfileDiv";
+import CompanyDiv from "../components/CompanyDiv";
 
 const Home: NextPage = () => {
   return (
-    <Container maxW='container.lg' py={6}>
-      <Stack spacing={12}>
-        <HeaderDiv />
-        <NewsDiv />
-        <BusinessDev />
+    <>
+      <Stack spacing={24} py={12}>
+        <Container maxW='container.lg' py={6} mx={'auto'}>
+          <HeaderDiv />
+        </Container>
+        <Box mx={'auto'}>
+          <Container maxW='container.lg' py={6} mx={'auto'}>
+            <NewsDiv />
+          </Container>
+        </Box>
+        <Box mx={'auto'}>
+          <Container maxW='container.lg' py={6} mx={'auto'}>
+            <BusinessDiv />
+          </Container>
+        </Box>
+        <ExplanationDiv />
+        <Box mx={'auto'}>
+          <Container maxW='container.lg' py={6} mx={'auto'}>
+            <ProfileDiv />
+          </Container>
+        </Box>
+        <Box mx={'auto'}>
+          <Container maxW='container.lg' py={6} mx={'auto'}>
+            <CompanyDiv />
+          </Container>
+        </Box>
       </Stack>
-    </Container>
+      <Box backgroundColor={'#D9B391'} textAlign={'center'} py={1}>
+        <Text fontSize="sm" color="gray.50">
+          &copy; {new Date().getFullYear()} Rhapseed, Inc. All rights reserved.
+        </Text>
+      </Box>
+
+    </>
   )
 }
 
