@@ -11,10 +11,12 @@ import ExplanationDiv from "../components/ExplanationDiv";
 import BusinessDiv from "../components/BusinessDiv";
 import ProfileDiv from "../components/ProfileDiv";
 import CompanyDiv from "../components/CompanyDiv";
+import SEO from "../components/SEO";
 
 const Home: NextPage = () => {
   return (
     <>
+      <SEO />
       <Stack spacing={24} py={12}>
         <Container maxW='container.lg' py={6} mx={'auto'}>
           <HeaderDiv />
