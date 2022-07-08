@@ -12,19 +12,19 @@ import {
 const HeaderDiv = () => {
   return (
     <Box py={12}>
-      <Center mb={-5}>
+      <Center mb={4}>
         <Text>
-          発想を紡げば 新発見の
+          仕事に、
         </Text>
-        <Text color={'primary'} >種</Text>
-        <Text>がある</Text>
+        <Text color={'primary'} >遊</Text>
+        <Text>び心を</Text>
       </Center>
       <Center>
         <Image
           src='/logo.svg'
           alt='rhapseed'
-          width={'80%'}
-          maxW={'500px'}
+          width={'60%'}
+          maxW={'400px'}
         />
       </Center>
     </Box>

@@ -30,14 +30,14 @@ const ExplanationDiv = () => {
             mb={8}
           >
             <Text textStyle={'rennie'}>
-              Rhapseed = Rhapsody × Seed
+              遊 × 優 × 悠
             </Text>
           </Heading>
           <Text>
-            Rhapseed は Rhapsody(狂詩曲)とSeed(種)に由来します。
+            遊び心を忘れずに、優れたプロダクトを悠久に。
           </Text>
           <Text pb={5}>
-            Rhapsodyは raptein(縫い合わす) と ode(詩) が語源とされ、転じてある一定の形式に縛られることなく様々な曲調のフレーズを紡いで1つの作品とする手法を意味します。
+            ハッカソンで偶然集まった
           </Text>
           <Text pb={5}>
             これは、新しい価値を生み出す時のプロセスと同じです。

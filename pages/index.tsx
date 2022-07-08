@@ -5,6 +5,10 @@ import {
   Stack,
   Text
 } from "@chakra-ui/react";
+import {
+  fetchApp,
+  fetchArticles
+} from "../lib/api";
 import HeaderDiv from "../components/HeaderDiv";
 import NewsDiv from "../components/NewsDiv";
 import ExplanationDiv from "../components/ExplanationDiv";
@@ -13,7 +17,16 @@ import ProfileDiv from "../components/ProfileDiv";
 import CompanyDiv from "../components/CompanyDiv";
 import SEO from "../components/SEO";
 
-const Home: NextPage = () => {
+interface Props {
+  app: any;
+  articles: any[];
+  total: any;
+}
+
+
+const Home = (props: Props) => {
+  console.log('testtest')
+  console.log(props)
   return (
     <>
       <SEO />
@@ -31,7 +44,7 @@ const Home: NextPage = () => {
             <BusinessDiv />
           </Container>
         </Box>
-        <ExplanationDiv />
+        {/*<ExplanationDiv />*/}
         <Box mx={'auto'}>
           <Container maxW='container.lg' py={6} mx={'auto'}>
             <ProfileDiv />
@@ -43,14 +56,30 @@ const Home: NextPage = () => {
           </Container>
         </Box>
       </Stack>
-      <Box backgroundColor={'#D9B391'} textAlign={'center'} py={1}>
+      <Box backgroundColor={'accent'} textAlign={'center'} py={1}>
         <Text fontSize="sm" color="gray.50">
-          &copy; {new Date().getFullYear()} Rhapseed, Inc. All rights reserved.
+          &copy; {new Date().getFullYear()} YuBASE, Inc. All rights reserved.
         </Text>
       </Box>
 
     </>
   )
 }
+
+// https://nextjs.org/docs/basic-features/data-fetching/get-static-props
+// export async function getStaticProps(): Promise<{ props: HomeProps }> {
+export async function getStaticProps() {
+  const app = await fetchApp();
+  // const { archives } = await fetchArchives();
+  const { articles, total } = await fetchArticles();
+  return {
+    props: {
+      app,
+      articles,
+      total
+    },
+  };
+}
+
 
 export default Home

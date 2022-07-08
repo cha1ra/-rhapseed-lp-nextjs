@@ -1,11 +1,11 @@
 import type { NextPage } from 'next'
 import {
-  Avatar, Badge,
-  Box, Button,
-  Center, Heading,
-  List, Stack,
-  Text, useColorModeValue
+  Box,
+  Heading,
+  Link,
+  Text, useColorModeValue,
 } from "@chakra-ui/react";
+import { ExternalLinkIcon } from '@chakra-ui/icons'
 import Business from "../types/business.type";
 
 interface Props {
@@ -32,6 +32,12 @@ const BusinessCard = ({business}: Props) => {
       >
         {business.description}
       </Text>
+      {business.link && (
+        <Link href={business.link} isExternal>
+          もっとみる <ExternalLinkIcon mx='2px' />
+        </Link>
+      )}
+
     </Box>
   )
 }

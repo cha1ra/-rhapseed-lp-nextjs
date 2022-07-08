@@ -8,43 +8,20 @@ import {
   Text,
   SimpleGrid,
 } from '@chakra-ui/react';
+import Business from "../types/business.type";
+import Profile from "../types/profile.type";
 
-export default function socialProfileWithImageHorizontal() {
+interface Props {
+  profile: Profile
+}
 
-  const profile = {
-    name: {
-      en: 'Aira Sakajiri',
-      ja: '坂尻 愛明',
-    },
-    description: "慶應義塾大学卒業後、楽天株式会社にECコンサルタントとして新卒入社。株式会社BluePlanet-worksでシステムエンジニアを経験の後、2019年7月quintet株式会社を共同創業。議事録サービス、学校法人向け試験配信システムなど、複数サービスの要件定義・開発を担当。フリーランス活動を経たのち、2022年3月株式会社Rhapseedを創業。",
-    awards: [
-      {
-        'date': '2019.04',
-        'title': 'GLOBAL GEEK AUDITION “LAB” 優勝',
-      },
-      {
-        'date': '2019.10',
-        'title': 'SOMPO主催 DataScience Bootcamp Demo day 優勝',
-      },
-      {
-        'date': '2021.12',
-        'title': "Shibuya Startup University 0期 学長賞・渋谷区賞"
-      },
-      {
-        'date': '2022.03',
-        'title': 'Epson主催 HackTreck2022 優勝'
-      }
-    ],
-    tags: [
-      'JavaScript', 'Vue.js', 'React', 'jQuery', 'PHP', 'Laravel', 'Python3', 'AWS'
-    ]
-  }
+export default function socialProfileWithImageHorizontal({profile}: Props) {
 
   return (
       <Stack
         borderWidth="1px"
         borderRadius="lg"
-        direction={{ base: 'column', md: 'row' }}
+        direction={{ base: 'column' }}
         bg='white'
         boxShadow={'2xl'}
         padding={4}>
@@ -56,8 +33,8 @@ export default function socialProfileWithImageHorizontal() {
             borderRadius={'full'}
             objectFit="cover"
             boxSize="150px"
-            src={'./member-aira.png'}
-            alt="坂尻 愛明"
+            src={profile.imgSrc}
+            alt={profile.name.ja}
           />
         </Flex>
         <Stack
@@ -78,7 +55,7 @@ export default function socialProfileWithImageHorizontal() {
                 {profile.name.ja}
               </Heading>
               <Text fontWeight={300} color={'gray.500'} fontSize={'sm'} mb={6}>
-                Webエンジニア プログラミング講師
+                {profile.title}
               </Text>
             </Stack>
           </Stack>
@@ -93,10 +70,14 @@ export default function socialProfileWithImageHorizontal() {
             </Text>
           </Stack>
           <Stack spacing={0}>
-            <Text fontSize={'xs'} fontWeight={600}>主な受賞歴</Text>
+            {
+              profile.awards.length > 0 && (
+                <Text fontSize={'xs'} fontWeight={600}>主な受賞歴</Text>
+              )
+            }
             <SimpleGrid
-              columns={[1, 1, 1, 2]}
-              mt={2}
+              columns={[1, 1, 1, 1]}
+              mt={profile.awards.length > 0 ? 2: 0}
             >
               {profile.awards.map((award, index) => (
                 <Stack

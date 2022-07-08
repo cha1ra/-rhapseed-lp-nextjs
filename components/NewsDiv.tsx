@@ -55,6 +55,18 @@ const NewsDiv = () => {
       'category': 'News',
       'created_at': '2022.03.17',
     },
+    {
+      'title': '社名をYuBASEに変更しました',
+      'description': 'hogehoge',
+      'category': 'News',
+      'created_at': '2022.06.17',
+    },
+    {
+      'title': 'Tech×事業企画 コミュニティで起業をBOOSTしよう！に登壇します',
+      'description': 'hogehoge',
+      'category': 'News',
+      'created_at': '2022.07.08',
+    },
   ]
 
   const title: Title = {

@@ -32,11 +32,14 @@ const CompanyDiv = () => {
         <Tbody>
           <Tr>
             <Td>会社名</Td>
-            <Td>株式会社Rhapseed (ラプシード)</Td>
+            <Td>株式会社YuBASE (ユーベース)</Td>
           </Tr>
           <Tr>
             <Td>代表者氏名</Td>
-            <Td>坂尻 愛明</Td>
+            <Td>
+              代表取締役　　坂尻 愛明<br/>
+              取締役　　　　入田 隆
+            </Td>
           </Tr>
           <Tr>
             <Td>事業内容</Td>
@@ -48,7 +51,7 @@ const CompanyDiv = () => {
           </Tr>
           <Tr>
             <Td>設立年月日</Td>
-            <Td>2022年3月10日</Td>
+            <Td>2022年3月9日</Td>
           </Tr>
         </Tbody>
       </Table>

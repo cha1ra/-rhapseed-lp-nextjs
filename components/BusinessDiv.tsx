@@ -12,13 +12,21 @@ const BusinessDiv = () => {
   const businesses: Business[] = [
     {
       id: 1,
-      title: 'Webアプリ開発',
-      description: 'Webアプリ開発を請負開発しています。フルスクラッチの開発から、kintoneをはじめとしたプラットフォーム上でのカスタマイズまで幅広く対応しています。',
+      title: 'AnyPalette',
+      description: '作品の想いと世界を"結ぶ"をミッションに、アーティストとユーザをつなぐ空間装飾品のマーケットプレイスです。',
+      link: 'https://any-palette.com/'
     },
     {
       id: 2,
-      'title': 'プログラミング教育',
-      'description': 'プログラミング講師としてプログラミングスクールや企業様に対する教育事業を展開しています。',
+      title: 'Webアプリ開発',
+      description: 'Webアプリ開発を請負開発しています。フルスクラッチの開発から、kintoneをはじめとしたプラットフォーム上でのカスタマイズまで幅広く対応しています。',
+      link: undefined
+    },
+    {
+      id: 3,
+      title: 'プログラミング教育',
+      description: 'プログラミング講師としてプログラミングスクールや企業様に対する教育事業を展開しています。',
+      link: undefined
     }
   ]
 
@@ -35,7 +43,7 @@ const BusinessDiv = () => {
       </Box>
       <SimpleGrid
         spacing={3}
-        columns={{base: 1, md: 2}}
+        columns={{base: 1, sm: 2, md: 3}}
       >
         {
           businesses.map((business,index) => (

@@ -11,8 +11,9 @@ import Fonts from "../components/Fonts";
 // https://chakra-ui.com/docs/styled-system/features/text-and-layer-styles
 const theme = extendTheme({
   colors: {
-    primary: '#BF0F30',
-    secondary: '#F24B4B',
+    primary: '#00CFFA',
+    secondary: '#FF0038',
+    accent: '#FFCE38'
   },
   styles: {
     global: {
