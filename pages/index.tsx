@@ -5,10 +5,6 @@ import {
   Stack,
   Text
 } from "@chakra-ui/react";
-import {
-  fetchApp,
-  fetchArticles
-} from "../lib/api";
 import HeaderDiv from "../components/HeaderDiv";
 import NewsDiv from "../components/NewsDiv";
 import ExplanationDiv from "../components/ExplanationDiv";
@@ -25,8 +21,6 @@ interface Props {
 
 
 const Home = (props: Props) => {
-  console.log('testtest')
-  console.log(props)
   return (
     <>
       <SEO />
@@ -65,21 +59,4 @@ const Home = (props: Props) => {
     </>
   )
 }
-
-// https://nextjs.org/docs/basic-features/data-fetching/get-static-props
-// export async function getStaticProps(): Promise<{ props: HomeProps }> {
-export async function getStaticProps() {
-  const app = await fetchApp();
-  // const { archives } = await fetchArchives();
-  const { articles, total } = await fetchArticles();
-  return {
-    props: {
-      app,
-      articles,
-      total
-    },
-  };
-}
-
-
 export default Home

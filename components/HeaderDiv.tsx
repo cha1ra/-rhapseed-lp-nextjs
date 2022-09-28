@@ -22,7 +22,7 @@ const HeaderDiv = () => {
       <Center>
         <Image
           src='/logo.svg'
-          alt='rhapseed'
+          alt='YuBASE'
           width={'60%'}
           maxW={'400px'}
         />

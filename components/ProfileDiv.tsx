@@ -102,8 +102,8 @@ const ProfileDiv = () => {
           columns={{base: 1, md: 2}}
         >
           {
-            profiles.map(profile => (
-              <ProfileCard profile={profile} />
+            profiles.map((profile, index) => (
+              <ProfileCard profile={profile} key={index} />
             ))
           }
         </SimpleGrid>
